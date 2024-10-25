@@ -71,7 +71,7 @@ const BlogPage = async () => {
       avatarUrl: item.author?.avatar?.formats?.thumbnail?.url || 'default-avatar.jpg',
       link: item.author?.link,
     },
-    categories: item.categories ? item.categories.map((category: Category) => category.name) : [],
+    categories: item.categories ? item.categories.map((category: Category) => category) : [],
     publishedAt: item.publishedAt,
   }));
 
