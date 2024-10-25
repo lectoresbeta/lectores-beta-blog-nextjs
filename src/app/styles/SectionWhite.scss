@@ -1,0 +1,161 @@
+@import './variables';
+
+.c__SectionWhite {
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 0;
+  h2 {
+    max-width: 750px;
+  }
+  div.slim {
+    max-width: 1124px;
+    width: 100%;
+  }
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    ul, ol {
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+      justify-content: space-between;
+      margin: 30px 0 0 0;
+      padding: 0;
+      text-align: left;
+      li {
+        margin: 0;
+        padding: 0;    
+        display: flex;
+        flex-direction: column;  
+        gap: 10px;
+        align-items: flex-start;
+        max-width: 33%;
+        h3 {
+          font-size: 32px;
+          font-weight: 500;
+          font-family: 'Roboto Serif';
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .c__SectionWhite__Articles {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+      margin: 0 -50px;
+    }
+  }
+  &__Number {
+    color: $primary-color;
+    font-size: 96px;
+    font-weight: 500;
+    font-family: 'Roboto Serif';
+  }
+  p {
+    font-size: 24px;
+    color: $gray;
+    line-height: 1.4;
+    max-width: 850px;
+  }
+  .ant-carousel {
+    width: 800px;
+    max-width: 100%;
+  }
+  .ant-carousel .slick-dots {
+    gap: 2px;
+    padding-top: 30px;
+
+    li {
+      text-align: center;;
+      button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $light;
+      }
+    }
+  }
+  .ant-carousel .slick-dots li.slick-active
+  {
+    width: 16px;
+     button {
+      background-color: $gray;
+      width: 10px;
+     }
+  }
+
+  &__ExploreResources {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    a {
+      color: $primary-color;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .c__SectionWhite {
+    padding: 45px 0;
+    & > div {
+      padding: 20px;
+      align-items: flex-start;
+      text-align: left;
+      ul, ol {
+        flex-direction: column;
+        li {
+          max-width: 100%;
+          h3 {
+            font-size: 24px;
+          }
+        }
+      }
+
+
+      .c__SectionWhite__Articles {
+        flex-direction: column;
+        max-width: 100%;
+        margin: 0;
+
+      }
+      h2, p {
+        max-width: 100%;
+      }
+    }
+    p {
+      font-size: 18px;
+    }
+    .ant-carousel {
+      width: 100%;
+      .slick-dots {
+        flex-direction: row;
+      }
+    }
+    &__Number {
+      font-size: 56px;
+    }
+    &__Testimonial {
+      h2 {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+.c__LegalPage {
+  max-width: 1024px;
+  margin: 60px auto;
+  h1 {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+  h2 {
+    font-size: 22px;
+    margin-top: 30px;
+  }
+  p, li {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .c__LegalPage {
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+}

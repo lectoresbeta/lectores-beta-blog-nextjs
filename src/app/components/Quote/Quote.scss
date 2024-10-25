@@ -1,0 +1,54 @@
+@import '../../styles/variables';
+
+.c__Quote {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 415px;
+
+  &__Mark {
+    font-size: 120px;
+    font-weight: 700;
+    color: $primary-color;
+    font-family: 'Roboto Serif';
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 45px;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__Content {
+    font-style: italic;
+  }
+
+  &__AuthorName {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $black;
+    margin: 30px 0 5px;
+  }
+
+  &__AuthorRole {
+    font-size: 16px;
+    font-weight: 400;
+    color: $gray;
+  }
+
+  hr {
+    border: 0;
+    border-top: 2px solid $extraLight;
+    width: 32px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .c__Quote {
+    height: 470px;
+  }
+}

@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+
+.c__SubscribeForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  & > div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  input {
+    flex-grow: 1;
+    border-radius: 8px;
+    border: solid 1px $light;
+    padding: 12px 8px;
+    min-width: 300px;
+    color: $black;
+  }
+  button {
+    width: 150px;
+  }
+  a {
+    color: $light;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__Terms {
+    span {
+      font-size: 14px;
+      a {
+        position: relative;
+        z-index: 9;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .c__SubscribeForm {
+    & > div {
+      flex-direction: column;
+      align-items: initial;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
