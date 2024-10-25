@@ -42,12 +42,6 @@ const SubscribeForm = () => {
     }
   };
 
-  const termsContent = (
-    <div>
-      <p>Al aceptar los términos, consientes en recibir correos electrónicos relacionados con nuestras actividades.</p>
-    </div>
-  );
-
   return (
     <div className="c__SubscribeForm__Wrapper">
       {submitted ? (

@@ -22,9 +22,20 @@ interface Article {
     name: string;
     avatarUrl: string;
     link: string;
-  };
-  categories: string[];
+    avatar: {
+      formats: {
+        thumbnail: {
+          url: string;
+        };
+      };
+    };
+  },
+  categories: Category[];
   publishedAt: string;
+}
+
+interface Category {
+  name: string;
 }
 
 const BlogPage = async () => {
@@ -40,7 +51,7 @@ const BlogPage = async () => {
 
   const result = await res.json();
 
-  const articles: Article[] = result.data.map((item: any) => ({
+  const articles: Article[] = result.data.map((item: Article) => ({
     id: item.id,
     documentId: item.documentId,
     title: item.title,
@@ -60,7 +71,7 @@ const BlogPage = async () => {
       avatarUrl: item.author?.avatar?.formats?.thumbnail?.url || 'default-avatar.jpg',
       link: item.author?.link,
     },
-    categories: item.categories ? item.categories.map((category: any) => category.name) : [],
+    categories: item.categories ? item.categories.map((category: Category) => category.name) : [],
     publishedAt: item.publishedAt,
   }));
 

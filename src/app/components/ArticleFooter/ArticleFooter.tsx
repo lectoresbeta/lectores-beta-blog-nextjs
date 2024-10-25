@@ -35,12 +35,6 @@ interface ArticleContentProps {
 }
 
 const ArticleFooter: React.FC<ArticleContentProps> = ({ article }) => {
-  const formattedDate = new Date(article.publishedAt).toLocaleDateString('es-ES', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  });
-
   return (
     <div className="c__ArticleFooter">
       <AuthorAvatar imageUrl={article.author.avatar.formats.small.url} />

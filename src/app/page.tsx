@@ -7,6 +7,10 @@ import Prefooter from './components/Prefooter/Prefooter';
 import { Carousel } from 'antd';
 import { ArrowRightOutlined } from '@ant-design/icons';
 
+interface Category {
+  name: string;
+}
+
 interface Article {
   id: number;
   documentId: string;
@@ -34,7 +38,7 @@ interface Article {
       };
     };
   },
-  categories: string[];
+  categories: Category[];
   publishedAt: string;
 }
 
@@ -100,7 +104,7 @@ const HomePage = async () => {
       avatarUrl: item.author?.avatar?.formats?.thumbnail?.url || 'default-avatar.jpg',
       link: item.author.link,
     },
-    categories: item.categories ? item.categories.map((category: any) => category.name) : [],
+    categories: item.categories ? item.categories.map((category: Category) => category.name) : [],
     publishedAt: item.publishedAt,
   }));
   return (
