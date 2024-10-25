@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Checkbox, Modal, Popover, message } from 'antd';
+import { Checkbox, message } from 'antd';
 import './SubscribeForm.scss';
 import Button from '../Button/Button';
 import Message from '../Message/Message';
@@ -10,9 +10,7 @@ const SubscribeForm = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
   const token = process.env.NEXT_PUBLIC_VITE_API_TOKEN;
-  console.log(token);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,7 +37,7 @@ const SubscribeForm = () => {
       if (response.ok) {
         setSubmitted(true);
       }
-    } catch (error) {
+    } catch {
       message.error('Error en la solicitud');
     }
   };
@@ -49,10 +47,6 @@ const SubscribeForm = () => {
       <p>Al aceptar los términos, consientes en recibir correos electrónicos relacionados con nuestras actividades.</p>
     </div>
   );
-
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
 
   return (
     <div className="c__SubscribeForm__Wrapper">

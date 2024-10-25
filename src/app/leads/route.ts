@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     } else {
       return NextResponse.json({ success: false, message: 'Error en la solicitud' });
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json({ success: false, message: 'Error en el servidor' });
   }
 }

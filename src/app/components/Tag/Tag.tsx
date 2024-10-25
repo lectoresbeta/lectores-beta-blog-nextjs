@@ -1,5 +1,4 @@
 import React from 'react';
-import AuthorAvatar from '../AuthorAvatar/AuthorAvatar.tsx';
 import './Tag.scss';
 
 const Tag = ({ children }) => {

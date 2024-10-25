@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import CookieConsent from '../CookieConsent/CookieConsent';
@@ -24,9 +24,9 @@ const Layout = () => {
 
   return (
     <div>
-      <Header scrollToSection={scrollToSection} />
+      <Header />
       <main>
-      <Outlet context={{ howItWorksSectionRef, testimonialsSectionRef, resourcesSectionRef, prefooterRef, scrollToSection }} />
+      <Outlet />
       </main>
 
       <Footer />

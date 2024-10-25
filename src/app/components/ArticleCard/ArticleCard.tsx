@@ -1,8 +1,7 @@
 import React from 'react';
-import AuthorAvatar from '../AuthorAvatar/AuthorAvatar.tsx';
 import './ArticleCard.scss';
-import Author from '../Author/Author.tsx';
-import Tag from '../Tag/Tag.tsx';
+import Author from '../Author/Author';
+import Tag from '../Tag/Tag';
 
 interface ArticleCardProps {
   id: string;
@@ -17,7 +16,7 @@ interface ArticleCardProps {
   publishedAt: string;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, tags, slug, imageUrl, authorAvatarUrl, authorName, authorLink, className = '', publishedAt }) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, tags, imageUrl, authorAvatarUrl, authorName, authorLink, className = '', publishedAt }) => {
   const formattedDate = new Date(publishedAt).toLocaleDateString('es-ES', {
     month: 'short',
     day: 'numeric'

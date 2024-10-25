@@ -1,7 +1,5 @@
 import React from 'react';
-import { marked } from 'marked';
 import "./ArticleHeader.scss";
-import AuthorAvatar from '../AuthorAvatar/AuthorAvatar';
 import Author from '../Author/Author';
 import Tag from '../Tag/Tag';
 
@@ -53,7 +51,7 @@ const ArticleHeader: React.FC<ArticleContentProps> = ({ article }) => {
         />
         <span className="c__ArticleHeader__Data__PublishedAt">{formattedDate}</span>
         <div className="c__ArticleHeader__Data__Categories">
-          {article.categories.map((tag, index) => (
+          {article.categories.map((tag) => (
             <Tag key={tag.id}>{tag.name}</Tag>
           ))}
         </div>

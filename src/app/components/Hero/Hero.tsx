@@ -1,8 +1,6 @@
 import React from 'react';
 import './Hero.scss';
-import Button from '../Button/Button';
 import SubscribeForm from '../SubscribeForm/SubscribeForm';
-import { SafetyCertificateOutlined, SettingOutlined, EuroOutlined } from '@ant-design/icons';
 import IconCurrencyEuroCircle from '../../assets/icons/CurrencyEuro.svg';
 import IconFileLock02 from '../../assets/icons/FileLock02.svg';
 import IconSettings01 from '../../assets/icons/Settings01.svg';

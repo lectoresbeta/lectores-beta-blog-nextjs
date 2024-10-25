@@ -1,6 +1,5 @@
 import React from 'react';
 import './Quote.scss';
-import quote from '../../assets/quote.svg';
 
 interface QuoteProps {
   content: string;

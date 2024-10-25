@@ -1,21 +1,17 @@
 import React from 'react';
 import './Header.scss';
-import Button from '../Button/Button';
+import Link from 'next/link';
 
-const Header: React.FC<HeaderProps> = ({ scrollToPrefooter }) => {
-  const handleClick = () => {
-    console.log('Botón clicado');
-  };
-
+const Header: React.FC = () => {
   return (
     <header className='c__Header'>
       <div>
-      <a href="/" className='c__Header__logo'>
+      <Link href="/" className='c__Header__logo'>
         <div className='c__Header__logo__isotipo'>
           <img src="/isotipo.svg" alt="Lectores Beta" />
         </div>
         <h1>lectores<strong>beta</strong></h1>
-      </a>
+      </Link>
       <div className='c__Header__menu'>        
         <nav>
           <ul>

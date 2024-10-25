@@ -26,6 +26,13 @@ interface Article {
     name: string;
     avatarUrl: string;
     link: string;
+    avatar: {
+      formats: {
+        thumbnail: {
+          url: string;
+        };
+      };
+    };
   },
   categories: string[];
   publishedAt: string;
@@ -64,7 +71,6 @@ const HomePage = async () => {
   
   const token = process.env.VITE_API_TOKEN;
 
-  // Obtener los datos de los artículos
   const res = await fetch(
     'https://api.lectoresbeta.com/api/articles?populate[0]=author.avatar&populate[1]=categories&populate[2]=cover&pagination[pageSize]=3&sort[1]=publishedAt:desc',
     {
@@ -78,7 +84,7 @@ const HomePage = async () => {
 
   const result = await res.json();
 
-  const articles: Article[] = result.data.map((item: any) => ({
+  const articles: Article[] = result.data.map((item: Article) => ({
     id: item.id,
     documentId: item.documentId,
     title: item.title,

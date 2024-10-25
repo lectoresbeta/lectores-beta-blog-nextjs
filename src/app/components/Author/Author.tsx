@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthorAvatar from '../AuthorAvatar/AuthorAvatar.tsx';
+import AuthorAvatar from '../AuthorAvatar/AuthorAvatar';
 import './Author.scss';
 
 interface AuthorProps {
@@ -8,7 +8,7 @@ interface AuthorProps {
   link: string;
 }
 
-const Author: React.FC<AuthorProps> = ({ avatarUrl, name, link }) => {
+const Author: React.FC<AuthorProps> = ({ avatarUrl, name }) => {
 
   return (
     <div className="c__Author">
