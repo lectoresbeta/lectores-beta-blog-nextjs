@@ -40,14 +40,10 @@ interface Content {
   body: string;
 }
 
-interface ArticlePageProps {
-  params: { 
-    id: string 
-  };
-}
+type tParams = Promise<{id: string[]}>;
 
-export default async function ArticlePage({ params }:ArticlePageProps) {
-  const id = (await params).id;
+export default async function ArticlePage(props: {params: tParams}) {
+  const { id } = await props.params;
   const token = process.env.VITE_API_TOKEN;
 
   // Llamada a la API en el servidor
