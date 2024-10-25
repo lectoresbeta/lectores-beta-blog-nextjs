@@ -1,10 +1,8 @@
-// app/article/[id]/page.tsx
 import ArticleHeader from '../../components/ArticleHeader/ArticleHeader';
 import ArticleContent from '../../components/ArticleContent/ArticleContent';
 import ArticleFooter from '../../components/ArticleFooter/ArticleFooter';
 import Prefooter from '../../components/Prefooter/Prefooter';
 import '../../styles/Article.scss';
-import { useRouter } from 'next/router'
 
 interface Article {
   id: number;
