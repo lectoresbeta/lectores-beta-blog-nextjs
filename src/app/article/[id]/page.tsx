@@ -48,7 +48,7 @@ interface ArticlePageProps {
 
 // Función que se ejecuta en el servidor y obtiene los datos
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const { id } = await params
+  const { id } = params
   const token = process.env.VITE_API_TOKEN;
 
   // Llamada a la API en el servidor
