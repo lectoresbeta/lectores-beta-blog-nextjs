@@ -4,6 +4,7 @@ import ArticleContent from '../../components/ArticleContent/ArticleContent';
 import ArticleFooter from '../../components/ArticleFooter/ArticleFooter';
 import Prefooter from '../../components/Prefooter/Prefooter';
 import '../../styles/Article.scss';
+import { useRouter } from 'next/router'
 
 interface Article {
   id: number;
@@ -41,13 +42,14 @@ interface Content {
   body: string;
 }
 
-// Modificación en el tipo para que no se trate como una promesa
 interface ArticlePageProps {
-  params: { id: string };
+  params: { 
+    id: string 
+  };
 }
 
-export default async function ArticlePage({ params }: ArticlePageProps) {
-  const { id } = params;
+export default async function ArticlePage({ params }:ArticlePageProps) {
+  const id = (await params).id;
   const token = process.env.VITE_API_TOKEN;
 
   // Llamada a la API en el servidor
