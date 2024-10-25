@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './Tag.scss';
 
-const Tag = ({ children }) => {
+interface TagProps {
+  children: ReactNode;
+}
 
+const Tag: React.FC<TagProps> = ({ children }) => {
   return (
     <span className="c__Tag">{children}</span>
   );
