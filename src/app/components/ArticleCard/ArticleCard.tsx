@@ -6,7 +6,7 @@ import Tag from '../Tag/Tag';
 interface ArticleCardProps {
   id: string;
   title: string;
-  tags: string[];
+  tags: Category[];
   slug: string;
   imageUrl: string;
   authorAvatarUrl: string;
@@ -14,6 +14,10 @@ interface ArticleCardProps {
   authorLink: string;
   className?: string;
   publishedAt: string;
+}
+
+interface Category {
+  name: string;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, tags, imageUrl, authorAvatarUrl, authorName, authorLink, className = '', publishedAt }) => {
