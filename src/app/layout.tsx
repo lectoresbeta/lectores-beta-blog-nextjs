@@ -4,12 +4,15 @@ import Footer from './components/Footer/Footer';
 import CookieConsent from './components/CookieConsent/CookieConsent';
 import './styles.scss';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { headers } from 'next/headers';
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const host = (await headers()).get('host') || 'lectoresbeta.com';
+  const isLectorasBeta = host.includes('lectorasbeta.com');
 
   return (
     <html lang="en">
@@ -25,7 +28,7 @@ export default function RootLayout({
       </head>
       <body>
         <div>
-          <Header />
+          <Header isLectorasBeta={isLectorasBeta} />
           <main>
           {children}
           </main>

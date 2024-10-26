@@ -2,7 +2,13 @@ import React from 'react';
 import './Header.scss';
 import Link from 'next/link';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  isLectorasBeta: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ isLectorasBeta }) => {
+  const logoText = isLectorasBeta ? 'lectoras' : 'lectores';
+
   return (
     <header className='c__Header'>
       <div>
@@ -10,7 +16,7 @@ const Header: React.FC = () => {
         <div className='c__Header__logo__isotipo'>
           <img src="/isotipo.svg" alt="Lectores Beta" />
         </div>
-        <h1>lectores<strong>beta</strong></h1>
+        <h1>{logoText}<strong>beta</strong></h1>
       </Link>
       <div className='c__Header__menu'>        
         <nav>
