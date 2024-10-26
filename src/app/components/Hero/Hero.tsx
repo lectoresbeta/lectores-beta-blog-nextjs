@@ -12,12 +12,12 @@ const Hero = () => {
       <div>
         <div className='c__Hero__Title'>
           <div>
-          <h2>Mejora tus obras con lectores beta</h2>
+          <h1>Mejora tus obras con lectores beta</h1>
           <p>Desarrolla tus habilidades con el feedback de otros escritores y crea tu propia comunidad</p>
           </div>
         </div>
         <div className="c__Hero__Form">  
-          <p className='c__Hero__Highlighted'>Déjanos tu email y te avisamos del lanzamiento</p>         
+          <p className='c__Hero__Highlighted'>Quiero enterarme del lanzamiento y estar al tanto de los mejores recursos para escritores</p>         
           <SubscribeForm />
         </div>
         <div className="c__Hero__Image">

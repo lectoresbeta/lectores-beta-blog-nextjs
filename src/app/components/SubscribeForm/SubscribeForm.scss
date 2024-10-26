@@ -16,6 +16,14 @@
     padding: 12px 8px;
     min-width: 300px;
     color: $black;
+    &::placeholder {
+      color: $gray;
+    }
+    &:focus-visible {
+      outline-color: $primary-color;
+      border: none;
+    }
+
   }
   button {
     width: 150px;

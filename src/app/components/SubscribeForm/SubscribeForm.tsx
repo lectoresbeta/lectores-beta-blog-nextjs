@@ -58,7 +58,7 @@ const SubscribeForm = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <Button type="submit" className="primary">Sí, quiero</Button>  
+            <Button type="submit" className="primary">Avísame</Button>  
           </div>
 
           <div className="c__SubscribeForm__Terms">

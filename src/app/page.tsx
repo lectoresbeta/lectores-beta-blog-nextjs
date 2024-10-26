@@ -114,22 +114,25 @@ const HomePage = async () => {
       <section className="c__SectionWhite">
         <div className="slim">
           <h2>¿Cómo funciona?</h2>
-          <p>Recibes lo que das. Nuestro sistema de créditos te permite recibir tanto feedback como aportes a la comunidad.</p>
+          <p>Recibes lo que das. Nuestro sistema de créditos te permite recibir tanto feedback como aportes
+            a la comunidad.</p>
           <ul>
             <li>
               <span className="c__SectionWhite__Number">1.</span>
               <h3>Lee y comenta a cambio de créditos</h3>
-              <p>Accede a obras inéditas y comparte tus comentarios y sugerencias...</p>
+              <p>Accede a obras inéditas y comparte tus comentarios y sugerencias con los autores para ayudarles
+                a mejorar y obtener créditos.</p>
             </li>
             <li>
               <span className="c__SectionWhite__Number">2.</span>
               <h3>Publica tus escritos y pide feedback</h3>
-              <p>Sube tu propia obra y utiliza tus créditos para recibir feedback personalizado...</p>
+              <p>Sube tu propia obra y utiliza tus créditos para recibir feedback personalizado de lectores.</p>
             </li>
             <li>
               <span className="c__SectionWhite__Number">3.</span>
               <h3>Mejora tu obra con el feedback recibido</h3>
-              <p>Usa los comentarios y sugerencias que recibas para pulir tu obra...</p>
+              <p>Usa los comentarios y sugerencias que recibas para pulir tu obra, mejorar la trama, los
+                personajes y el estilo.</p>
             </li>
           </ul>
         </div>
@@ -139,7 +142,9 @@ const HomePage = async () => {
         <div>
           <div>
             <h3>Lee obra inédita personalizada según tus intereses</h3>
-            <p>Sumérgete en una experiencia literaria única con obras inéditas...</p>
+            <p>Sumérgete en una experiencia literaria única con obras inéditas creadas exclusivamente según
+              tus intereses, donde cada relato, personaje y trama se ajustan a tus gustos y te llevan a
+              explorar nuevos mundos diseñados solo para ti.</p>
           </div>
           <img src="/app-mockup1.png" alt="Mockup" />
         </div>
@@ -148,7 +153,8 @@ const HomePage = async () => {
       <section className="c__SectionWhite">
         <div>
           <h2>Los mejores recursos para escritores</h2>
-          <p>Suscríbete a nuestro blog y podrás estar al tanto de recursos para escritores...</p>
+          <p>Suscríbete a nuestro blog y podrás estar al tanto de recursos para escritores, novedades,
+            convocatorias de concursos, workshops de escritura, etc.</p>
 
           <div className="c__SectionWhite__Articles">
             {articles.map((article) => (
@@ -177,7 +183,8 @@ const HomePage = async () => {
           <img src="/app-mockup2.png" alt="Mockup" />
           <div>
             <h3>Muéstrate al mundo con tu perfil de autor</h3>
-            <p>Organiza tus escritos en tu espacio personalizado. Comparte tu biografía...</p>
+            <p>Organiza tus escritos en tu espacio personalizado. Comparte tu biografía, obras anteriores
+              y logros para darte a conocer y conecta con nuevos lectores y seguidores.</p>
           </div>
         </div>
       </section>

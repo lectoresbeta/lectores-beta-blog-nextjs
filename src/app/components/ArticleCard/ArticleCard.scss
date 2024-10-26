@@ -7,9 +7,14 @@
   border-radius: 16px;
   background-color: $background-color;
   box-shadow: 0 4px 16px rgba(0, 0, 0, .16);
-  padding: 15px;
+  padding: 11px;
   text-align: left;
   max-width: 378px;
+  border: solid 4px #FFFFFF;
+  box-sizing: border-box;
+  &:hover {
+    border-color: $primary-color;
+  }
   & > img {
     border-radius: 6px;
     width: 348px;

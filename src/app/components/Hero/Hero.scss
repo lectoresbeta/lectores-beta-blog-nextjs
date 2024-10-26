@@ -20,7 +20,13 @@
       "info1 info1 info2 info2 info3 info3";
   
     padding: 90px 0 30px;
-    h2, h3 {
+    h1 {
+      font-family: 'Roboto Serif', sans-serif;
+      font-weight: 500;
+      color: #FFFFFF;
+      font-size: 56px;
+    }
+    h1, h2, h3 {
       color: #FFFFFF;
     }
     h3 {
@@ -30,6 +36,7 @@
       color: $primary-color;
       font-weight: 600;
       font-size: 18px;
+      max-width: 440px;
     }
     & > div {
       img {
