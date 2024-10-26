@@ -5,15 +5,31 @@ import { Checkbox, message } from 'antd';
 import './SubscribeForm.scss';
 import Button from '../Button/Button';
 import Message from '../Message/Message';
+import ReCaptcha from '../ReCaptcha/ReCaptcha';
 
 const SubscribeForm = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
-  const token = process.env.NEXT_PUBLIC_VITE_API_TOKEN;
+  const apiToken = process.env.NEXT_PUBLIC_VITE_API_TOKEN;
+  const [token, setToken] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!token) return alert("Error: reCAPTCHA no completado");
+    
+    const response = await fetch('/api/verify-recaptcha', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ token }),
+    });
+
+    const data = await response.json();
+    if (!data.success) {
+      message.error('Error: No se pudo verificar el ReCaptcha');
+    }
 
     if (!acceptedTerms) {
       message.error('Debes aceptar los términos y condiciones para continuar.');
@@ -24,7 +40,7 @@ const SubscribeForm = () => {
       const response = await fetch('https://api.lectoresbeta.com/api/leads', {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${apiToken}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -50,6 +66,7 @@ const SubscribeForm = () => {
         </Message>
       ) : ( 
         <form className='c__SubscribeForm' onSubmit={handleSubmit}>
+          <ReCaptcha onVerify={setToken} action="submit_form" />
           <div>
             <input
               type='email'
