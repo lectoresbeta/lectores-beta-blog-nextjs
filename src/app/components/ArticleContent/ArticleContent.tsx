@@ -1,6 +1,7 @@
 import React from 'react';
 import { marked } from 'marked';
 import "./ArticleContent.scss";
+import ShareButtons from '../ShareButtons/ShareButtons';
 
 interface Content {
   id: number;
@@ -8,6 +9,7 @@ interface Content {
 }
 
 interface Article {
+  id: string;
   title: string;
   content: Content[];
   cover: {
@@ -28,6 +30,9 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ article }) => {
     return <p>No hay contenido disponible.</p>;
   }
 
+  const articleUrl = `https://lectoresbeta.com/article/${article.id}`;
+  const articleTitle = article.title;
+
   return (
     <div className="c__ArticleContent">
       <img className="c__ArticleContent__Cover" src={article.cover.formats.large.url} alt={article.title} />
@@ -38,6 +43,8 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ article }) => {
           />
         </div>
       ))}
+
+      <ShareButtons url={articleUrl} title={articleTitle} />
     </div>
   );
 };
