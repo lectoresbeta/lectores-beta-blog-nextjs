@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { FacebookOutlined, XOutlined, MailOutlined, InstagramOutlined, LinkOutlined } from '@ant-design/icons';
+import { FacebookOutlined, XOutlined, InstagramOutlined, LinkOutlined } from '@ant-design/icons';
 import './ShareButtons.scss';
 import IconMail from '../../assets/icons/Mail.svg';
 
