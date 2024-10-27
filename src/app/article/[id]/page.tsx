@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 
 interface Article {
   id: string;
+  documentId: string;
   title: string;
   slug: string;
   content: Content[];
@@ -81,7 +82,7 @@ export async function generateMetadata(props: {params: tParams}): Promise<Metada
       title: article.title,
       description: `Lee el artículo titulado ${article.title} de ${article.author.name}`,
       images: [article.cover.formats.large.url],
-      url: `https://lectoresbeta.com/article/${article.id}`,
+      url: `https://lectoresbeta.com/article/${article.documentId}`,
       type: 'article',
     },
     twitter: {

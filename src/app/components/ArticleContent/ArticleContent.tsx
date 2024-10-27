@@ -10,6 +10,7 @@ interface Content {
 
 interface Article {
   id: string;
+  documentId: string;
   title: string;
   content: Content[];
   cover: {
@@ -30,7 +31,7 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ article }) => {
     return <p>No hay contenido disponible.</p>;
   }
 
-  const articleUrl = `https://lectoresbeta.com/article/${article.id}`;
+  const articleUrl = `https://lectoresbeta.com/article/${article.documentId}`;
   const articleTitle = article.title;
 
   return (
